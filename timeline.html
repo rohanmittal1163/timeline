@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TIMELINE</title>
+	<link rel="stylesheet" type="text/css" href="css/all.css">
+	<link rel="stylesheet" type="text/css" href="css/brands.css">
+	<link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+	<link rel="stylesheet" type="text/css" href="css/regular.css">
+	<link rel="stylesheet" type="text/css" href="css/solid.css">
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		*::after,*::before,*{
+			box-sizing: border-box;
+		}
+		:root{
+			--theme-color :#ff7979;
+			--gradient:  #c6ffdd, #fbd786, #f7797d;
+			--gradient-radial: #fceabb, #f8b500;
+		}
+		.container:hover{
+			box-shadow: 5px 5px 2px #fbd786,10px 10px 2px #f7797d ;
+		}
+		.container-right:hover{
+			box-shadow: 5px 5px 2px #fbd786,10px 10px 2px #f7797d ;
+			
+		}
+		body{
+			background: linear-gradient(to right,var(--gradient));
+			font-family: poppins,sans-serif;
+		}
+		.timeline{
+			position: relative;	
+			width: 75%;
+			margin: auto;
+			height: auto;
+		}
+		.vline{
+			background-image: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));	
+			width: 4px;
+			height: calc(100vh + 300px);
+			margin:2% auto;
+			position: relative;
+		}
+		.icon{
+			background: linear-gradient(to right,var(--gradient));
+			color: var(--theme-color);
+			padding: 10px;
+			border-radius: 100%;
+			border: 4px solid white;
+			position: absolute;
+			top: 0px;
+			left: -21px;
+		}
+		.container{
+			background: radial-gradient(circle farthest-side,var(--gradient-radial));
+			width: 40%;
+			position: absolute;
+			top: 0px;
+			left: 5%;
+			border-radius: 5px;
+			padding: 25px;
+			
+			background-blend-mode:;
+		}
+		/*.container::before{
+			 content: "";
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            background-image: url(http://nie-images.s3.amazonaws.com/gall_content/2018/9/2018_9$largeimg05_Sep_2018_143217887.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			opacity: 0.2;
+		}*/
+		.container::after{
+			content: " ";
+			width: 20px;
+			height: 20px;
+			background: radial-gradient(circle farthest-side,var(--gradient-radial));
+			position:absolute;
+			top: 20px;
+			right: -10px;
+			transform: rotate(45deg);
+		}
+		.container-right{
+			background: radial-gradient(circle farthest-side,var(--gradient-radial));
+			width: 40%;
+			position: absolute;
+			top: 20%;
+			right: 5%;
+			border-radius: 5px;
+			padding: 25px;
+		}
+		.container-right::before{
+			content: " ";
+			width: 20px;
+			height: 20px;
+			background: radial-gradient(circle farthest-side,var(--gradient-radial));
+			position:absolute;
+			top: 20px;
+			left: -10px;
+			transform: rotate(45deg);
+		}
+		.button{
+			color: white;
+			background: linear-gradient(to right,var(--gradient));
+			border-radius: 5px;
+			text-align: center;
+			padding: 10px 20px;
+			border: none;
+			text-decoration: none;
+			font-size: 14px;
+			font-weight: bold;
+		}
+		.button:hover{
+			background: linear-gradient(to top,var(--gradient));
+		}
+		.header,.footer{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.date{
+			color: rgba(0,0,0,0.6);
+			font-size: 14px;
+		}
+		cite{
+			color: rgba(0, 0, 0, 0.6);
+		}
+		.content{
+			margin: 3% auto;
+			color: rgba(0, 0, 0, 0.9);
+			font-size: 15px;
+			text-align: justify;
+		}
+	
+		.fa-person{
+			padding-left: 14px;
+			padding-right: 14px;
+		}
+		.c-20{
+			top: 20%;
+		}
+		.c-40{
+			top: 40%;
+		}
+		.c-60{
+			top: 60%;
+		}
+		.c-80{
+			top: 80%;
+		}
+		@media all and (max-width: 1000px){
+
+			.vline{
+				height: calc(100vh + 550px);
+			}
+		}
+
+		@media all and (max-width: 850px){
+
+			.vline{
+				margin: 0% 0%;
+			}
+			.container,.container-right{
+				width: 90%;
+				left:10%;
+			}
+			
+			.container::after{
+				left: -10px;
+			}
+			h2{
+				font-size: 16px;
+			}
+		}
+	</style>
+</head>
+<body>
+<div class="timeline">
+<div class="vline">
+	<i class="fa-solid fa-brain icon"></i>
+	<i class="fa-solid fa-check	c-20 icon"></i>
+	<i class="fa-solid fa-person c-40 icon"></i>
+	<i class="fa-solid fa-plane c-60 icon"></i>
+	<i class="fa-solid fa-graduation-cap c-80 icon"></i>
+
+</div>
+<div class="container">
+<div class="header">
+	<h2>Be smart</h2>
+	<p class="date">Chanakya Neeti 7.12</p>
+</div>
+	<p class="content"> अपने व्यवहार में बहुत सीधे ना रहे, वन में जो सीधे पेड़ पहले काटे जाते हैं,
+और जो पेड़ टेढ़े हैं वो खड़े हैं ।</p>
+<div class="footer">
+	<a href="#" class="button">Read More</a>
+	<cite>- CHANAKYA</cite>
+</div>
+</div>
+
+
+<div class="container-right">
+<div class="header">
+	<h2>Being content</h2>
+	<p class="date">Chanakya Neeti 1.13</p>
+</div>
+	<p class="content"> जो निश्चित को छोड़कर अनिश्चित का सहारा लेता है,
+उसका निश्चित भी नष्ट हो जाता है। अनिश्चित तो स्वयं नष्ट होता ही है।</p>
+<div class="footer">
+	<a href="#" class="button">Read More</a>
+	<cite>- KAUTILYA</cite>
+</div>
+</div>
+
+<div class="container c-40" >
+<div class="header">
+	<h2>The ‘right’ method</h2>
+	<p class="date">Chanakya Neeti 4.18</p>
+</div>
+	<p class="content">इन बातो को बार बार गौर करे…सही समय, सही मित्र, सही ठिकाना,
+पैसे कमाने के सही साधन, पैसे खर्चा करने के सही तरीके, आपके उर्जा स्रोत ।</p>
+<div class="footer">
+	<a href="#" class="button">Read More</a>
+	<cite>- VISHNUGUPTA</cite>
+</div>
+</div>
+
+<div class="container-right c-60" >
+<div class="header">
+	<h2>The greatness of a human</h2>
+	<p class="date">Chanakya Neeti 16.06</p>
+</div>
+	<p class="content"> उत्तमता गुणों से आती है, न कि ऊँचे स्थान से।
+कौआ महल के शिखर पर बैठकर गरुड नहीं बन जाता। </p>
+<div class="footer">
+	<a href="#" class="button">Read More</a>
+	<cite>- CHANAKYA</cite>
+</div>
+</div>
+
+<div class="container c-80">
+<div class="header">
+	<h2>Education</h2>
+	<p class="date">Chanakya Neeti 3.8</p>
+</div>
+	<p class="content"> रूप और यौवन से सम्पन्न, उच्च कुल में उत्पन्न होकर भी विद्याहीन मनुष्य सुगन्धहीन फूल के समान होते हैं और शोभा नहीं देते।</p>
+<div class="footer">
+	<a href="#" class="button">Read More</a>
+	<cite>- KAUTILYA</cite>
+</div>
+</div>
+
+</div>
+<script type="text/javascript" src="js/all.js"></script>
+<script type="text/javascript" src="js/brands.js"></script>
+<script type="text/javascript" src="js/solid.js"></script>
+<script type="text/javascript" src="js/fontawesome.js"></script>
+<script type="text/javascript" src="js/regular.js"></script>
+</body>
+</html>
